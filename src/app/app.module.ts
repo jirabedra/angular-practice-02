@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HorizontalNavBarComponent } from './components/horizontal-nav-bar/horizontal-nav-bar.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { ReviewService } from './services/review.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

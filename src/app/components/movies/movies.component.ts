@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MovieService } from 'src/app/services/movie.service';
+import { ReviewService } from 'src/app/services/review.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,11 +9,24 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent {
-  constructor(private movieService : MovieService, private sanitizer: DomSanitizer){}
+  constructor(private movieService : MovieService,
+     private reviewService : ReviewService){}
 
-  videoSource : string = "https://www.youtube.com/watch?v=V6X5ti4YlG8";
+  score:number = 0;
 
-  sanitizeVideoUrl() {
-    return this.sanitizer.bypassSecurityTrustHtml(this.videoSource)
+  add(){
+    this.score++
+  }
+
+  less(){
+    if(this.score >= 1){
+      this.score--;
+    };
+  }
+
+  submit(){
+    this.reviewService.reviews.push(this.score);
+    alert(this.reviewService.reviews.length);
+    this.score=0;
   }
 }

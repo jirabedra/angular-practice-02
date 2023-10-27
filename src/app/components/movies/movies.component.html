@@ -1,18 +1,3 @@
-<h1>Objetivo</h1>
-<p>
-    En esta ruta tiene que aparecer el título, póster y descripción de una película que elijan. 
-    El layout lo deciden ustedes.
-    Además, tienen que aparecer los siguientes elementos:
-</p>
-<ul>
-    <li>un contador que empiece en 0 y sea no-negativo</li>
-    <li>un botón de incremento de puntaje</li>
-    <li>un botón de decremento de puntaje</li>
-    <li>un botón de emitir puntaje</li>
-</ul>
-<p>
-    Cuando se presione el botón emitir puntaje, este puntaje debe aparecer en la lista de puntajes de /reviews
-</p>
 <div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -21,4 +6,11 @@
         </div>
     </div>    
 </div>
+<h1>{{score}}</h1>
+<div>
+    <button type="button"  (click)="add()" class="btn btn-info">+1</button>
+    <button type="button"  (click)="submit()" class="btn btn-info">submit</button>
+    <button type="button"  (click)="less()" class="btn btn-info">-1</button>
+</div>
+
 
